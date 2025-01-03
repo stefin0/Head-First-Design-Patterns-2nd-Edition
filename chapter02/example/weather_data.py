@@ -16,8 +16,7 @@ class WeatherData(Subject):
 
     def notify_observers(self):
         for observer in self.__observers:
-            observer.update(self.__temperature,
-                            self.__humidity, self.__pressure)
+            observer.update()
 
     def measurements_changed(self):
         self.notify_observers()
@@ -27,3 +26,12 @@ class WeatherData(Subject):
         self.__humidity = humidity
         self.__pressure = pressure
         self.measurements_changed()
+
+    def get_temperature(self):
+        return self.__temperature
+
+    def get_humidity(self):
+        return self.__humidity
+
+    def get_pressure(self):
+        return self.__pressure
