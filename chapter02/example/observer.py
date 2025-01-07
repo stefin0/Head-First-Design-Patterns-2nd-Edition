@@ -6,5 +6,5 @@ class Observer(ABC):
         super().__init__()
 
     @abstractmethod
-    def update():
+    def update(self):
         pass
